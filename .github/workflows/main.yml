@@ -22,7 +22,6 @@ jobs:
         run: |
           pip install splunk-add-on-ucc-framework
           pip install splunk-packaging-toolkit
-
       - name: Build an app using UCC
         run: ucc-gen build
 
@@ -63,7 +62,6 @@ jobs:
           ls -la app-dir/
           FILE_NAME=$(ls -1 app-dir/)
           splunk-appinspect inspect app-dir/$FILE_NAME --output-file appinspect_result.json --mode test
-
       - name: Upload appinspect report
         uses: actions/upload-artifact@v4
         with:
@@ -90,4 +88,3 @@ jobs:
         with:
           name: appinspect-api-html-report
           path: AppInspect_response.html
-
